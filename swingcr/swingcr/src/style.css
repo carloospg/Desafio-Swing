@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Lobster&family=Oswald:wght@400;500&display=swap');
+
+:root {
+  --color-fondo: #F8F4E9;
+  --color-fondo-tabla: #DDDDDD;
+  --color-complementario: #D8AFA0;
+  --color-texto: #000000;
+  --fuente-titulos: 'Lobster', cursive;
+  --fuente-subtitulos: 'Oswald', sans-serif;
+  --fuente-texto: 'Lato', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 175px;
+  font-family: var(--fuente-texto);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--fuente-subtitulos);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 2px solid black;
+  background-color: var(--color-fondo);
+}
+
+header h1 {
+  font-family: var(--fuente-titulos);
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+nav a {
+  display: block;
+  padding: 10px 30px;
+  background-color: var(--color-complementario);
+  color: var(--color-texto);
+  text-decoration: none;
+  font-family: var(--fuente-subtitulos);
+  font-weight: 24px;
+  border-radius: 7px;
+  transition: ease-in-out 0.1s;
+}
+
+nav a:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+#horario-clases h2 {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.horario-dia{
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.horario-dia h3{
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.grid-horario-clases {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 2fr;
+  border: 2px solid black;
+  background-color: var(--color-fondo-tabla);
+  margin: 40px 25px 0px 25px;
+}
+
+.grid-cabecera, .grid-hora, .evento {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid black;
+  min-height: 60px;
+}
+
+.grid-cabecera {
+  font-family: var(--fuente-subtitulos);
+  background-color: var(--color-complementario);
+}
+
+.grid-hora {
+  font-weight: bold;
+  background-color: var(--color-fondo);
+}
+
+.horario-dia-actividades{
+  display: flex;
+  margin-bottom: 40px;
+  border: 2px solid var(--color-texto);
+  margin: 40px 25px 0px 25px;
+}
+
+#horario-actividades h2{
+  padding: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+#horario-clases,
+#horario-actividades {
+  scroll-margin-top: 150px;
+}
+
+.dia-label {
+  background-color: var(--color-fondo);
+  font-family: var(--fuente-subtitulos);
+  font-weight: bold;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-align: center;
+  padding: 20px 15px;
+  flex-shrink: 0;
+  border-right: 2px solid black;
+  background-color: var(--color-fondo-tabla);
+}
+
+.grid-horario-actividades {
+  display: grid;
+  grid-template-columns: 1.5fr 3fr 2fr;
+  width: 100%;
+}
+
+.grid-horario-actividades .grid-cabecera,
+.grid-horario-actividades .grid-hora,
+.grid-horario-actividades .evento,
+.grid-horario-actividades .ubicacion{
+  padding: 12px;
+  border: 1px solid black;
+  min-height: 60px;
+}
+
+.grid-horario-actividades .evento,
+.grid-horario-actividades .ubicacion {
+  background-color: var(--color-fondo-tabla);
+}
+
+footer {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.btn-registro {
+  display: inline-block;
+  padding: 15px 40px;
+  background-color: var(--color-complementario);
+  color: var(--color-texto);
+  font-family: var(--fuente-subtitulos);
+  font-size: 20px;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: ease-in-out 0.1s;
+}
+
+.btn-registro:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.contenedor-formularios {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5%;
+  align-items: start;
+  max-width: 1000px;
+  margin: 40px auto;
+  
+}
+
+.formulario {
+  background-color: var(--color-fondo-tabla);
+  text-align: center;
+  padding: 30px;
+  border: 1px solid black;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 350px;
+  max-width: 500px;
+}
+
+.formulario h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.formulario label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.formulario input[type="text"],
+.formulario select,
+.formulario textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  resize: none;
+}
+
+.formulario button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--color-complementario);
+  color: var(--color-texto);
+  font-family: var(--fuente-subtitulos);
+  font-size: 18px;
+  transition: ease-in-out 0.1s;
+}
+
+.formulario button:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.modal-evento {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal-evento.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-contenido {
+  position: relative;
+  background-color: var(--color-fondo);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 10);
+  width: 90%;
+  max-width: 500px;
+}
+
+#modal-cerrar {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--color-complementario);
+  font-family: var(--fuente-subtitulos);
+  font-size: 16px;
+  transition: ease-in-out 0.1s;
+}
+
+#modal-cerrar:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+}
