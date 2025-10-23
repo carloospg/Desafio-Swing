@@ -100,6 +100,9 @@ nav a:hover {
   text-align: center;
   border: 1px solid black;
   min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .grid-cabecera {
@@ -157,6 +160,7 @@ nav a:hover {
   padding: 12px;
   border: 1px solid black;
   min-height: 60px;
+  text-align: center;
 }
 
 .grid-horario-actividades .evento,
@@ -257,7 +261,6 @@ footer {
   align-items: center;
   visibility: hidden;
   opacity: 0;
-  transition: opacity 0.3s, visibility 0.3s;
 }
 
 .modal-evento.visible {
@@ -275,6 +278,12 @@ footer {
   max-width: 500px;
 }
 
+.modal-botones {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
 #modal-cerrar {
   width: 100%;
   padding: 12px;
@@ -284,10 +293,62 @@ footer {
   background-color: var(--color-complementario);
   font-family: var(--fuente-subtitulos);
   font-size: 16px;
-  transition: ease-in-out 0.1s;
+  cursor: pointer;
 }
 
 #modal-cerrar:hover{
   transform: scale(1.05);
+}
+
+#modal-borrar {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--color-complementario);
+  font-family: var(--fuente-subtitulos);
+  font-size: 16px;
   cursor: pointer;
+}
+
+#modal-borrar:hover{
+  transform: scale(1.05);
+}
+
+.tarjeta-evento {
+  padding: 5px;
+  border-radius: 5px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tarjeta-evento.estilo-lindy-hop {
+  background-color: #7eb5ec;
+}
+
+.tarjeta-evento.estilo-shag {
+  background-color: #9df09d;
+}
+
+.tarjeta-evento.estilo-solo-jazz {
+  background-color: #fa8efa;
+}
+
+.tarjeta-evento.tipo-taster {
+  background-color: #b3ff00;
+}
+
+.tarjeta-evento.tipo-social {
+  background-color: #d8a0ba;
+}
+
+.tarjeta-evento.tipo-concierto{
+  background-color: #ccccff;
+}
+
+.tarjeta-evento.tipo-mix-match {
+  background-color: #5fff5f;
 }
