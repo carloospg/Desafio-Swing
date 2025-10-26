@@ -359,3 +359,28 @@ footer {
   opacity: 0.5;
   cursor: grabing;
 }
+
+@media (max-width: 768px) {
+  .contenedor-formularios {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 40px;
+    margin: 10px;
+  }
+
+  .formulario {
+    width: 100%;
+  }
+
+  .modal-contenido {
+    max-width: 350px;
+    padding: 20px;
+  }
+
+  .modal-evento {
+    overflow-y: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 150px;
+  }
+}
