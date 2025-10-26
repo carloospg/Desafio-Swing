@@ -294,6 +294,7 @@ footer {
   font-family: var(--fuente-subtitulos);
   font-size: 16px;
   cursor: pointer;
+  transition: ease-in-out 0.1s;
 }
 
 #modal-cerrar:hover{
@@ -310,6 +311,7 @@ footer {
   font-family: var(--fuente-subtitulos);
   font-size: 16px;
   cursor: pointer;
+  transition: ease-in-out 0.1s;
 }
 
 #modal-borrar:hover{
@@ -351,4 +353,9 @@ footer {
 
 .tarjeta-evento.tipo-mix-match {
   background-color: #5fff5f;
+}
+
+.tarjeta-evento.dragging {
+  opacity: 0.5;
+  cursor: grabing;
 }

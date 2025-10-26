@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('#horario-clases')) {
         mostrarEventos();
         inicializarModales();
+        inicializarDragDrop();
     }
 });
 
@@ -57,7 +58,7 @@ function inicializarFormularios() {
         )
 
         if (salaOcupada) {
-            alert('La sala ya está ocupada');
+            console.log('La sala ya está ocupada');
             return;
         }
 
@@ -80,8 +81,6 @@ function inicializarFormularios() {
         formClase.reset();
         actualizarHorasClase();
     });
-
-    // formulario actividad 
 
     const diaActividadSelect = document.getElementById('dia-actividad');
     const horasActividadSelect = document.getElementById('horas-actividad');
@@ -121,7 +120,7 @@ function inicializarFormularios() {
             );
 
             if (salaOcupada) {
-                alert('La sala ya esta ocupada');
+                console.log('La sala ya esta ocupada');
                 return;
             }
         } else {
@@ -133,7 +132,7 @@ function inicializarFormularios() {
             ).length;
 
             if (actividadMismoLugar >= 2) {
-                alert('No se pueden hacer mas eventos en esta ubicacion a esa hora');
+                console.log('No se pueden hacer mas eventos en esta ubicacion a esa hora');
                 return;
             }
         }
@@ -191,6 +190,8 @@ function mostrarEventos() {
                 tarjetaClase.textContent = evento.nombre;
                 tarjetaClase.dataset.id = evento.id;
 
+                tarjetaClase.draggable = true;
+
                 slotDestino.appendChild(tarjetaClase);
             }
 
@@ -208,13 +209,19 @@ function mostrarEventos() {
                 tarjetaActividad.classList.add(`tipo-${evento.tipoActividad}`);
                 tarjetaActividad.textContent = evento.nombre;
                 tarjetaActividad.dataset.id = evento.id;
+                
+                tarjetaActividad.draggable = true;
+
                 slotEvento.appendChild(tarjetaActividad);
 
                 const tarjetaUbicacion = document.createElement('div');
                 tarjetaUbicacion.className = 'tarjeta-evento';
                 tarjetaUbicacion.classList.add(`tipo-${evento.tipoActividad}`)
                 tarjetaUbicacion.textContent = evento.ubicacion;
-                tarjetaActividad.dataset.id = evento.id;
+                tarjetaUbicacion.dataset.id = evento.id;
+
+                tarjetaUbicacion.draggable = true;
+                
                 slotUbicacion.appendChild(tarjetaUbicacion);
             }
 
@@ -277,12 +284,135 @@ function inicializarModales() {
     });
 }
 
+function inicializarDragDrop() {
+    const contenedorTablas = document.querySelector('main');
+
+    contenedorTablas.addEventListener('dragstart', (event) => {
+        if(event.target.classList.contains('tarjeta-evento')) {
+            event.dataTransfer.setData('text/plain', event.target.dataset.id);
+
+            setTimeout(() =>{
+                event.target.classList.add('dragging');
+            }, 0);
+        }
+    });
+
+    contenedorTablas.addEventListener('dragend', (event) => {
+        if(event.target.classList.contains('tarjeta-evento')){
+            event.target.classList.remove('dragging');
+        }
+    });
+
+    contenedorTablas.addEventListener('dragover', (event) => {
+        event.preventDefault();
+    });
+
+    contenedorTablas.addEventListener('drop', (event) => {
+        event.preventDefault();
+
+        const celdaDestino = event.target.closest('.evento, .ubicacion');
+
+        if (!celdaDestino) {
+            return
+        }
+
+        const idEvento = Number(event.dataTransfer.getData('text/plain'));
+
+        let eventosActuales = cargarEventos();
+
+        const eventoMovido = eventosActuales.find(e => e.id === idEvento);
+
+        if(!eventoMovido) {
+            return;
+        }
+
+        const nuevoDia = celdaDestino.dataset.dia;
+        const nuevaSala = celdaDestino.dataset.sala;
+
+        let elementoHora = celdaDestino.previousElementSibling;
+
+        while (elementoHora && !elementoHora.classList.contains('grid-hora')){
+            elementoHora = elementoHora.previousElementSibling;
+        }
+     
+        const nuevaHora = elementoHora ? elementoHora.textContent.trim() : eventoMovido.hora;
+        
+        if(eventoMovido.tipo === 'clase'){    
+            if (!nuevaSala) {
+                console.log('Solo puedes ponerlo en las tablas de las clases');
+                return;
+            }
+
+            const salaOcupada = eventosActuales.some(evento =>
+                evento.id !== idEvento &&
+                evento.dia === nuevoDia &&
+                evento.hora === nuevaHora &&
+                ((evento.tipo === 'clase' && evento.sala === nuevaSala) || (evento.tipo === 'actividad' && evento.ubicacion === nuevaSala))
+            );
+    
+            if (salaOcupada) {
+                console.log('La sala ya esta ocupada a esa hora');
+                return;
+            }
+            
+        } else if (eventoMovido.tipo === 'actividad') {
+            const salasExclusivas = ['be-hopper', 'new-orleans', 'savoy'];
+            const nuevaUbicacion = nuevaSala || eventoMovido.ubicacion;
+
+            if (nuevaSala) {
+                console.log('Solo puedes ponerlo en las tablas de las actividades');
+                return;
+            }
+
+            if (salasExclusivas.includes(nuevaUbicacion)) {
+                const salaOcupadaActividad = eventosActuales.some(evento =>
+                    evento.id !== idEvento &&
+                    evento.dia === nuevoDia &&
+                    evento.hora === nuevaHora &&
+                    ((evento.tipo === 'clase' && evento.sala === nuevaUbicacion) || (evento.tipo === 'actividad' && evento.ubicacion === nuevaUbicacion))
+                );
+
+                if (salaOcupadaActividad) {
+                    console.log('Esta sala ya esta ocupada');
+                    return;
+                }
+            } else {
+                const actividadesMismoLugar = eventosActuales.filter(evento =>
+                    evento.id !== idEvento &&
+                    evento.tipo === 'actividad' &&
+                    evento.dia === nuevoDia &&
+                    evento.hora === nuevaHora &&
+                    evento.ubicacion === nuevaUbicacion
+                ).length;
+
+                if(actividadesMismoLugar >= 2) {
+                    console.log('Ya hay dos dos actividades en esa ubicacion y horas');
+                    return;
+                }
+            }
+        }
+
+        eventoMovido.dia = nuevoDia;
+        eventoMovido.hora = nuevaHora;
+
+        if (eventoMovido.tipo === 'clase') {
+            eventoMovido.sala = nuevaSala;
+        } else if (eventoMovido.tipo === 'actividad' && nuevaSala){
+            eventoMovido.ubicacion = nuevaSala;
+        }
+
+        guardarEventos(eventosActuales);
+
+        mostrarEventos();
+    });
+}
+
 function abrirModalClase(clase){
     document.getElementById('modal-clase-titulo').textContent = clase.nombre;
     document.getElementById('modal-clase-dia').textContent = clase.dia;
     document.getElementById('modal-clase-hora').textContent = clase.hora;
     document.getElementById('modal-clase-ubicacion').textContent = clase.sala;
-    document.getElementById('modal-clase-profesores').textContent = clase.profesores;
+    document.getElementById('modal-clase-profesores').textContent = clase.profesor;
     document.getElementById('modal-clase-estilo').textContent = clase.estilo;
     document.getElementById('modal-clase-nivel').textContent = clase.nivel;
     document.getElementById('modal-clase').classList.add('visible');
@@ -293,11 +423,12 @@ function abrirModalActividad(actividad){
     document.getElementById('modal-actividad-dia').textContent = actividad.dia;
     document.getElementById('modal-actividad-hora').textContent = actividad.hora;
     document.getElementById('modal-actividad-ubicacion').textContent = actividad.ubicacion;
-    document.getElementById('modal-actividad-profesores').textContent = actividad.profesores;
+    document.getElementById('modal-actividad-profesores').textContent = actividad.profesor;
     document.getElementById('modal-actividad-estilo').textContent = actividad.estilo;
     document.getElementById('modal-actividad-descripcion').textContent = actividad.descripcion;
     const pProfesor = document.getElementById('p-actividad-profesores');
     const pBanda = document.getElementById('p-actividad-banda');
+    const pDescripcion = document.getElementById('p-actividad-descripcion');
 
     if(actividad.profesor) {
         document.getElementById('modal-actividad-profesores').textContent = actividad.profesor;
@@ -311,6 +442,13 @@ function abrirModalActividad(actividad){
         pBanda.style.display = 'block';
     } else {
         pBanda.style.display = 'none';
+    }
+
+    if(actividad.descripcion) {
+        document.getElementById('modal-actividad-descripcion').textContent = actividad.descripcion;
+        pDescripcion.style.display = 'block';
+    } else {
+        pDescripcion.style.display = 'none';
     }
 
     document.getElementById('modal-actividad').classList.add('visible');
