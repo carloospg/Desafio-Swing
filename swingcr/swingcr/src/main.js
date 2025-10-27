@@ -206,7 +206,7 @@ function mostrarEventos() {
             if (slotEvento && slotUbicacion) {
                 const tarjetaActividad = document.createElement('div');
                 tarjetaActividad.className = 'tarjeta-evento';
-                tarjetaActividad.classList.add(`tipo-${evento.tipoActividad}`);
+                tarjetaActividad.classList.add(`estilo-${evento.estilo}`);
                 tarjetaActividad.textContent = evento.nombre;
                 tarjetaActividad.dataset.id = evento.id;
                 
@@ -216,7 +216,7 @@ function mostrarEventos() {
 
                 const tarjetaUbicacion = document.createElement('div');
                 tarjetaUbicacion.className = 'tarjeta-evento';
-                tarjetaUbicacion.classList.add(`tipo-${evento.tipoActividad}`)
+                tarjetaUbicacion.classList.add(`estilo-${evento.estilo}`)
                 tarjetaUbicacion.textContent = evento.ubicacion;
                 tarjetaUbicacion.dataset.id = evento.id;
 

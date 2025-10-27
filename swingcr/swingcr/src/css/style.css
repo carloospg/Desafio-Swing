@@ -5,6 +5,9 @@
   --color-fondo-tabla: #DDDDDD;
   --color-complementario: #D8AFA0;
   --color-texto: #000000;
+  --color-lindy-hop: #a7c7e7;
+  --color-shag: #f2d2a9;
+  --color-solo-jazz: #d8bfd8;
   --fuente-titulos: 'Lobster', cursive;
   --fuente-subtitulos: 'Oswald', sans-serif;
   --fuente-texto: 'Lato', sans-serif;
@@ -328,31 +331,15 @@ footer {
 }
 
 .tarjeta-evento.estilo-lindy-hop {
-  background-color: #7eb5ec;
+  background-color: var(--color-lindy-hop);
 }
 
 .tarjeta-evento.estilo-shag {
-  background-color: #9df09d;
+  background-color: var(--color-shag);
 }
 
 .tarjeta-evento.estilo-solo-jazz {
-  background-color: #fa8efa;
-}
-
-.tarjeta-evento.tipo-taster {
-  background-color: #b3ff00;
-}
-
-.tarjeta-evento.tipo-social {
-  background-color: #d8a0ba;
-}
-
-.tarjeta-evento.tipo-concierto{
-  background-color: #ccccff;
-}
-
-.tarjeta-evento.tipo-mix-match {
-  background-color: #5fff5f;
+  background-color: var(--color-solo-jazz);
 }
 
 .tarjeta-evento.dragging {
