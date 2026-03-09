@@ -4,282 +4,226 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>swingcr</title>
+    <title>Swing CR - VIII Festival de Swing Ciudad Real</title>
   </head>
   <body>
-    <header>
-      <h1> SWING CR </h1>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <a href="#horario-clases"> CLASES </a>
-            </li>
-            <li>
-              <a href="#horario-actividades"> ACTIVIDADES </a>
-            </li>
-            <li>
-              <a href="/registro.html"> REGISTRO </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <!-- El header se rellena dinamicamente por headerFooter.js -->
+    <header></header>
     <main>
-      <section id="horario-clases">
-        <h2> HORARIO CLASES </h2>
-        <div class="horario-dia">
-          <h3> VIERNES </h3>
-          <div class="grid-horario-clases">
-            <div class="grid-cabecera"> HORA </div>
-            <div class="grid-cabecera"> BE HOPPER </div>
-            <div class="grid-cabecera"> NEW ORLEANS </div>
-            <div class="grid-cabecera"> SAVOY </div>
+      <section id="programa">
+        <h2>COLORES OFICIALES</h2>
 
-            <div class="grid-hora"> 20:00-21:30 </div>
-            <div class="evento" data-dia="viernes" data-hora="20:00" data-sala="be-hopper"></div>
-            <div class="evento" data-dia="viernes" data-hora="20:00" data-sala="new-orleans"></div>
-            <div class="evento" data-dia="viernes" data-hora="20:00" data-sala="savoy"></div>
-
-            <div class="grid-hora"> 21:30-23:00 </div>
-            <div class="evento" data-dia="viernes" data-hora="21:30" data-sala="be-hopper"></div>
-            <div class="evento" data-dia="viernes" data-hora="21:30" data-sala="new-orleans"></div>
-            <div class="evento" data-dia="viernes" data-hora="21:30" data-sala="savoy"></div>
-
-            <div class="grid-hora"> 23:00-00:30 </div>
-            <div class="evento" data-dia="viernes" data-hora="23:00" data-sala="be-hopper"></div>
-            <div class="evento" data-dia="viernes" data-hora="23:00" data-sala="new-orleans"></div>
-            <div class="evento" data-dia="viernes" data-hora="23:00" data-sala="savoy"></div>
-          </div>
+        <div class="leyenda">
+          <span class="leyenda-item"
+            ><span
+              class="leyenda-color"
+              style="background: var(--color-lindy-hop)"
+            ></span
+            >Lindy Hop</span
+          >
+          <span class="leyenda-item"
+            ><span
+              class="leyenda-color"
+              style="background: var(--color-shag)"
+            ></span
+            >Shag</span
+          >
+          <span class="leyenda-item"
+            ><span
+              class="leyenda-color"
+              style="background: var(--color-solo-jazz)"
+            ></span
+            >Solo Jazz</span
+          >
+          <span class="leyenda-item"
+            ><span
+              class="leyenda-color"
+              style="background: var(--color-actividad)"
+            ></span
+            >Actividad</span
+          >
         </div>
-        <div class="horario-dia">
-          <h3> SÁBADO </h3>
-          <div class="grid-horario-clases">
-            <div class="grid-cabecera"> HORA </div>
-            <div class="grid-cabecera"> BE HOPPER </div>
-            <div class="grid-cabecera"> NEW ORLEANS </div>
-            <div class="grid-cabecera"> SAVOY </div>
 
-            <div class="grid-hora"> 10:30-12:00 </div>
-            <div class="evento" data-dia="sabado" data-hora="10:30" data-sala="be-hopper"></div>
-            <div class="evento" data-dia="sabado" data-hora="10:30" data-sala="new-orleans"></div>
-            <div class="evento" data-dia="sabado" data-hora="10:30" data-sala="savoy"></div>
-
-            <div class="grid-hora"> 12:00-14:00 </div>
-            <div class="evento" data-dia="sabado" data-hora="12:00" data-sala="be-hopper"></div>
-            <div class="evento" data-dia="sabado" data-hora="12:00" data-sala="new-orleans"></div>
-            <div class="evento" data-dia="sabado" data-hora="12:00" data-sala="savoy"></div>
-
-            <div class="grid-hora"> 16:30-17:30 </div>
-            <div class="evento" data-dia="sabado" data-hora="16:30" data-sala="be-hopper"></div>
-            <div class="evento" data-dia="sabado" data-hora="16:30" data-sala="new-orleans"></div>
-            <div class="evento" data-dia="sabado" data-hora="16:30" data-sala="savoy"></div>
-
-            <div class="grid-hora"> 17:30-19:00 </div>
-            <div class="evento" data-dia="sabado" data-hora="17:30" data-sala="be-hopper"></div>
-            <div class="evento" data-dia="sabado" data-hora="17:30" data-sala="new-orleans"></div>
-            <div class="evento" data-dia="sabado" data-hora="17:30" data-sala="savoy"></div>
-
-            <div class="grid-hora"> 19:00-20:30 </div>
-            <div class="evento" data-dia="sabado" data-hora="19:00" data-sala="be-hopper"></div>
-            <div class="evento" data-dia="sabado" data-hora="19:00" data-sala="new-orleans"></div>
-            <div class="evento" data-dia="sabado" data-hora="19:00" data-sala="savoy"></div>
-
-            <div class="grid-hora"> 20:30-22:00 </div>
-            <div class="evento" data-dia="sabado" data-hora="22:00" data-sala="be-hopper"></div>
-            <div class="evento" data-dia="sabado" data-hora="22:00" data-sala="new-orleans"></div>
-            <div class="evento" data-dia="sabado" data-hora="22:00" data-sala="savoy"></div>
-
-            <div class="grid-hora"> 22:00-23:30 </div>
-            <div class="evento" data-dia="sabado" data-hora="22:00" data-sala="be-hopper"></div>
-            <div class="evento" data-dia="sabado" data-hora="22:00" data-sala="new-orleans"></div>
-            <div class="evento" data-dia="sabado" data-hora="22:00" data-sala="savoy"></div>
-
-            <div class="grid-hora"> 23:30-01:00 </div>
-            <div class="evento" data-dia="sabado" data-hora="23:30" data-sala="be-hopper"></div>
-            <div class="evento" data-dia="sabado" data-hora="23:30" data-sala="new-orleans"></div>
-            <div class="evento" data-dia="sabado" data-hora="23:30" data-sala="savoy"></div>
-
-            <div class="grid-hora"> 01:00-03:00 </div>
-            <div class="evento" data-dia="sabado" data-hora="01:00" data-sala="be-hopper"></div>
-            <div class="evento" data-dia="sabado" data-hora="01:00" data-sala="new-orleans"></div>
-            <div class="evento" data-dia="sabado" data-hora="01:00" data-sala="savoy"></div>
-          </div>
+        <!-- Tabs para cambiar entre los tres dias del festival.
+             data-tab indica que panel debe mostrar cada boton. -->
+        <div class="tabs-dias" role="tablist" aria-label="Seleccionar dia">
+          <button
+            class="tab-btn activo"
+            data-tab="viernes"
+            role="tab"
+            aria-selected="true"
+            aria-controls="panel-viernes"
+          >
+            VIERNES
+          </button>
+          <button
+            class="tab-btn"
+            data-tab="sabado"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-sabado"
+          >
+            SABADO
+          </button>
+          <button
+            class="tab-btn"
+            data-tab="domingo"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-domingo"
+          >
+            DOMINGO
+          </button>
         </div>
-        <div class="horario-dia">
-          <h3> DOMINGO </h3>
-          <div class="grid-horario-clases">
-            <div class="grid-cabecera"> HORA </div>
-            <div class="grid-cabecera"> BE HOPPER </div>
-            <div class="grid-cabecera"> NEW ORLEANS </div>
-            <div class="grid-cabecera"> SAVOY </div>
 
-            <div class="grid-hora"> 10:00-12:00 </div>
-            <div class="evento" data-dia="domingo" data-hora="10:00" data-sala="be-hopper"></div>
-            <div class="evento" data-dia="domingo" data-hora="10:00" data-sala="new-orleans"></div>
-            <div class="evento" data-dia="domingo" data-hora="10:00" data-sala="savoy"></div>
+        <!-- ═══ PANEL VIERNES ═══
+             Solo el panel con clase "activo" es visible.
+             main.js añade y quita esa clase al hacer click en los tabs. -->
+        <div class="tab-panel activo" id="panel-viernes" role="tabpanel">
+          <h3 class="panel-subtitulo">Clases</h3>
 
-            <div class="grid-hora"> 12:00-14:00 </div>
-            <div class="evento" data-dia="domingo" data-hora="12:00" data-sala="be-hopper"></div>
-            <div class="evento" data-dia="domingo" data-hora="12:00" data-sala="new-orleans"></div>
-            <div class="evento" data-dia="domingo" data-hora="12:00" data-sala="savoy"></div>
-
-            <div class="grid-hora"> 16:00-17:30 </div>
-            <div class="evento" data-dia="domingo" data-hora="16:00" data-sala="be-hopper"></div>
-            <div class="evento" data-dia="domingo" data-hora="16:00" data-sala="new-orleans"></div>
-            <div class="evento" data-dia="domingo" data-hora="16:00" data-sala="savoy"></div>
-
-            <div class="grid-hora"> 17:30-19:00 </div>
-            <div class="evento" data-dia="domingo" data-hora="17:30" data-sala="be-hopper"></div>
-            <div class="evento" data-dia="domingo" data-hora="17:30" data-sala="new-orleans"></div>
-            <div class="evento" data-dia="domingo" data-hora="17:30" data-sala="savoy"></div>
-
-            <div class="grid-hora"> 19:00-20:00 </div>
-            <div class="evento" data-dia="domingo" data-hora="19:00" data-sala="be-hopper"></div>
-            <div class="evento" data-dia="domingo" data-hora="19:00" data-sala="new-orleans"></div>
-            <div class="evento" data-dia="domingo" data-hora="19:00" data-sala="savoy"></div>
+          <!-- Grid de clases: en el HTML solo estan las cabeceras.
+               Las filas con los eventos las inserta main.js al cargar la pagina. -->
+          <div class="grid-horario-clases" id="clases-viernes">
+            <div class="grid-cabecera">HORA</div>
+            <div class="grid-cabecera">BE HOPPER</div>
+            <div class="grid-cabecera">NEW ORLEANS</div>
+            <div class="grid-cabecera">SAVOY</div>
           </div>
+          <!-- Aviso que se muestra si no hay clases. main.js lo oculta cuando hay eventos. -->
+          <p class="tabla-vacia" id="vacia-clases-viernes">
+            No hay clases registradas para el viernes.
+          </p>
+
+          <h3 class="panel-subtitulo">Actividades</h3>
+
+          <!-- Grid de actividades: igual que el de clases, filas generadas por JS -->
+          <div class="grid-horario-actividades" id="actividades-viernes">
+            <div class="grid-cabecera">HORARIO</div>
+            <div class="grid-cabecera">EVENTO</div>
+            <div class="grid-cabecera">UBICACION</div>
+          </div>
+          <p class="tabla-vacia" id="vacia-actividades-viernes">
+            No hay actividades registradas para el viernes.
+          </p>
         </div>
-      </section>
-      <section id="horario-actividades">
-        <h2> HORARIO ACTIVIDADES </h2>
-        <div class="horario-dia-actividades">
-          <div class="dia-label"> VIERNES </div>
 
-          <div class="grid-horario-actividades">
-            <div class="grid-cabecera"> HORARIO </div>
-            <div class="grid-cabecera"> EVENTO </div>
-            <div class="grid-cabecera"> UBICACIÓN </div>
-
-            <div class="grid-hora"> 20:00-21:30 </div>
-            <div class="evento" data-dia="viernes" data-hora="20:00"></div>
-            <div class="ubicacion" data-dia="viernes" data-hora="20:00"></div>
-
-            <div class="grid-hora"> 21:30-23:00 </div>
-            <div class="evento" data-dia="viernes" data-hora="21:30"></div>
-            <div class="ubicacion" data-dia="viernes" data-hora="21:30"></div>
-            
-            <div class="grid-hora"> 23:00-00:30 </div>
-            <div class="evento" data-dia="viernes" data-hora="23:00"></div>
-            <div class="ubicacion" data-dia="viernes" data-hora="23:00"></div>
+        <!-- ═══ PANEL SABADO ═══ -->
+        <div class="tab-panel" id="panel-sabado" role="tabpanel">
+          <h3 class="panel-subtitulo">Clases</h3>
+          <div class="grid-horario-clases" id="clases-sabado">
+            <div class="grid-cabecera">HORA</div>
+            <div class="grid-cabecera">BE HOPPER</div>
+            <div class="grid-cabecera">NEW ORLEANS</div>
+            <div class="grid-cabecera">SAVOY</div>
           </div>
+          <p class="tabla-vacia" id="vacia-clases-sabado">
+            No hay clases registradas para el sabado.
+          </p>
+
+          <h3 class="panel-subtitulo">Actividades</h3>
+          <div class="grid-horario-actividades" id="actividades-sabado">
+            <div class="grid-cabecera">HORARIO</div>
+            <div class="grid-cabecera">EVENTO</div>
+            <div class="grid-cabecera">UBICACION</div>
+          </div>
+          <p class="tabla-vacia" id="vacia-actividades-sabado">
+            No hay actividades registradas para el sabado.
+          </p>
         </div>
-        <div class="horario-dia-actividades">
-          <div class="dia-label"> SÁBADO </div>
-          <div class="grid-horario-actividades">
-            <div class="grid-cabecera"> HORARIO </div>
-            <div class="grid-cabecera"> EVENTO </div>
-            <div class="grid-cabecera"> UBICACIÓN </div>
 
-            <div class="grid-hora"> 10:30-12:00 </div>
-            <div class="evento" data-dia="sabado" data-hora="10:30"></div>
-            <div class="ubicacion" data-dia="sabado" data-hora="10:30"></div>
-
-            <div class="grid-hora"> 12:00-14:00 </div>
-            <div class="evento" data-dia="sabado" data-hora="12:00"></div>
-            <div class="ubicacion" data-dia="sabado" data-hora="12:00"></div>
-            
-            <div class="grid-hora"> 16:30-17:30 </div>
-            <div class="evento" data-dia="sabado" data-hora="16:30"></div>
-            <div class="ubicacion" data-dia="sabado" data-hora="16:30"></div>
-
-            <div class="grid-hora"> 17:30-19:00 </div>
-            <div class="evento" data-dia="sabado" data-hora="17:30"></div>
-            <div class="ubicacion" data-dia="sabado" data-hora="17:30"></div>
-
-            <div class="grid-hora"> 19:00-20:30 </div>
-            <div class="evento" data-dia="sabado" data-hora="19:00"></div>
-            <div class="ubicacion" data-dia="sabado" data-hora="19:00"></div>
-
-            <div class="grid-hora"> 20:30-22:00 </div>
-            <div class="evento" data-dia="sabado" data-hora="20:30"></div>
-            <div class="ubicacion" data-dia="sabado" data-hora="20:30"></div>
-
-            <div class="grid-hora"> 22:00-23:30 </div>
-            <div class="evento" data-dia="sabado" data-hora="22:00"></div>
-            <div class="ubicacion" data-dia="sabado" data-hora="22:00"></div>
-
-            <div class="grid-hora"> 23:30-01:00 </div>
-            <div class="evento" data-dia="sabado" data-hora="23:30"></div>
-            <div class="ubicacion" data-dia="sabado" data-hora="23:30"></div>
-
-            <div class="grid-hora"> 01:00-03:00 </div>
-            <div class="evento" data-dia="sabado" data-hora="01:00"></div>
-            <div class="ubicacion" data-dia="sabado" data-hora="01:00"></div>
+        <!-- ═══ PANEL DOMINGO ═══ -->
+        <div class="tab-panel" id="panel-domingo" role="tabpanel">
+          <h3 class="panel-subtitulo">Clases</h3>
+          <div class="grid-horario-clases" id="clases-domingo">
+            <div class="grid-cabecera">HORA</div>
+            <div class="grid-cabecera">BE HOPPER</div>
+            <div class="grid-cabecera">NEW ORLEANS</div>
+            <div class="grid-cabecera">SAVOY</div>
           </div>
-        </div>
-        <div class="horario-dia-actividades">
-          <div class="dia-label"> DOMINGO </div>
-          <div class="grid-horario-actividades">
-            <div class="grid-cabecera"> HORARIO </div>
-            <div class="grid-cabecera"> EVENTO </div>
-            <div class="grid-cabecera"> UBICACIÓN </div>
+          <p class="tabla-vacia" id="vacia-clases-domingo">
+            No hay clases registradas para el domingo.
+          </p>
 
-            <div class="grid-hora"> 10:30-12:00 </div>
-            <div class="evento" data-dia="domingo" data-hora="10:30"></div>
-            <div class="ubicacion" data-dia="domingo" data-hora="10:30"></div>
-
-            <div class="grid-hora"> 12:00-14:00 </div>
-            <div class="evento" data-dia="domingo" data-hora="12:00"></div>
-            <div class="ubicacion" data-dia="domingo" data-hora="12:00"></div>
-
-            <div class="grid-hora"> 16:00-17:30 </div>
-            <div class="evento" data-dia="domingo" data-hora="16:00"></div>
-            <div class="ubicacion" data-dia="domingo" data-hora="16:00"></div>
-
-            <div class="grid-hora"> 17:30-19:00 </div>
-            <div class="evento" data-dia="domingo" data-hora="17:30"></div>
-            <div class="ubicacion" data-dia="domingo" data-hora="17:30"></div>
-
-            <div class="grid-hora"> 19:00-20:00 </div>
-            <div class="evento" data-dia="domingo" data-hora="19:00"></div>
-            <div class="ubicacion" data-dia="domingo" data-hora="19:00"></div>
+          <h3 class="panel-subtitulo">Actividades</h3>
+          <div class="grid-horario-actividades" id="actividades-domingo">
+            <div class="grid-cabecera">HORARIO</div>
+            <div class="grid-cabecera">EVENTO</div>
+            <div class="grid-cabecera">UBICACION</div>
           </div>
+          <p class="tabla-vacia" id="vacia-actividades-domingo">
+            No hay actividades registradas para el domingo.
+          </p>
         </div>
       </section>
     </main>
-    <footer>
-      <a href="./registro.html" class="btn-registro"> REGISTRAR EVENTO </a>
-    </footer>
+
+    <!-- El footer se rellena dinamicamente por headerFooter.js -->
+    <footer></footer>
+
+    <!-- Modal para ver el detalle de una CLASE. -->
     <div id="modal-clase" class="modal-evento">
+      <div class="modal-overlay"></div>
       <div class="modal-contenido">
-
+        <span class="modal-badge badge-clase">CLASE</span>
+        <!-- Todos los spans vacios se rellenan desde main.js con los datos del evento clicado -->
         <h2 id="modal-clase-titulo"></h2>
-        <p><strong>Día:</strong> <span id="modal-clase-dia"></span></p>
-        <p><strong>Hora:</strong> <span id="modal-clase-hora"></span></p>
-        <p><strong>Sala:</strong> <span id="modal-clase-ubicacion"></span></p>
-        <p><strong>Profesor/a:</strong> <span id="modal-clase-profesores"></span></p>
-        <p><strong>Estilo:</strong> <span id="modal-clase-estilo"></span></p>
-        <p><strong>Nivel:</strong> <span id="modal-clase-nivel"></span></p>
-        
-        <div class="modal-botones">
-          <button id="modal-cerrar"> CERRAR </button>
-          <button id="modal-borrar"> BORRAR EVENTO </button>
+        <div class="modal-grid-info">
+          <p><strong>Dia:</strong> <span id="modal-clase-dia"></span></p>
+          <p><strong>Hora:</strong> <span id="modal-clase-hora"></span></p>
+          <p><strong>Sala:</strong> <span id="modal-clase-ubicacion"></span></p>
+          <p>
+            <strong>Profesor/a:</strong>
+            <span id="modal-clase-profesores"></span>
+          </p>
+          <p><strong>Estilo:</strong> <span id="modal-clase-estilo"></span></p>
+          <p><strong>Nivel:</strong> <span id="modal-clase-nivel"></span></p>
         </div>
-
+        <div class="modal-botones">
+          <button class="btn-modal btn-cerrar">CERRAR</button>
+          <button class="btn-modal btn-editar">EDITAR</button>
+          <button class="btn-modal btn-borrar">ELIMINAR</button>
+        </div>
       </div>
     </div>
+
+    <!-- Modal para ver el detalle de una ACTIVIDAD. Mismo funcionamiento que el de clase. -->
     <div id="modal-actividad" class="modal-evento">
+      <div class="modal-overlay"></div>
       <div class="modal-contenido">
-
+        <span class="modal-badge badge-actividad">ACTIVIDAD</span>
         <h2 id="modal-actividad-titulo"></h2>
-        <p><strong>Día:</strong> <span id="modal-actividad-dia"></span></p>
-        <p><strong>Hora:</strong> <span id="modal-actividad-hora"></span></p>
-        <p><strong>Ubicación:</strong> <span id="modal-actividad-ubicacion"></span></p>
-
-        <p id="p-actividad-profesores"><strong>Profesor/a:</strong> <span id="modal-actividad-profesores"></span></p>
-        <p><strong>Estilo:</strong> <span id="modal-actividad-estilo"></span></p>
-        <p id="p-actividad-banda"><strong>Banda:</strong> <span id="modal-actividad-banda"></span></p>
-        <p id="p-actividad-descripcion"><strong>Descripción:</strong> <span id="modal-actividad-descripcion"></span></p>
-
-        <div class="modal-botones">
-          <button id="modal-cerrar"> CERRAR </button>
-          <button id="modal-borrar"> BORRAR EVENTO </button>
+        <div class="modal-grid-info">
+          <p><strong>Dia:</strong> <span id="modal-actividad-dia"></span></p>
+          <p><strong>Hora:</strong> <span id="modal-actividad-hora"></span></p>
+          <p>
+            <strong>Ubicacion:</strong>
+            <span id="modal-actividad-ubicacion"></span>
+          </p>
+          <!-- Estos parrafos se muestran u ocultan segun si el campo tiene valor -->
+          <p id="p-actividad-profesores">
+            <strong>Profesor/a:</strong>
+            <span id="modal-actividad-profesores"></span>
+          </p>
+          <p>
+            <strong>Estilo:</strong> <span id="modal-actividad-estilo"></span>
+          </p>
+          <p id="p-actividad-banda">
+            <strong>Banda:</strong> <span id="modal-actividad-banda"></span>
+          </p>
+          <p id="p-actividad-descripcion">
+            <strong>Descripcion:</strong>
+            <span id="modal-actividad-descripcion"></span>
+          </p>
         </div>
-        
+        <div class="modal-botones">
+          <button class="btn-modal btn-cerrar">CERRAR</button>
+          <button class="btn-modal btn-editar">EDITAR</button>
+          <button class="btn-modal btn-borrar">ELIMINAR</button>
+        </div>
       </div>
     </div>
 
-    <script type="module" src="/src/main.js" ></script>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
